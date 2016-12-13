@@ -33,9 +33,9 @@ public class CourseWorkInfoRepoImpl extends CourseWorkInfoRepo {
         CourseWorkInfoInts.add(CW); 
     }
         public CourseWorkInfo getCourseWork(int ID){ //get a certain member
-        return CourseWorkInfo.get(ID); 
+        return CourseWorkInfos.get(ID); 
     }
         public CourseWorkInfoInt getCourseWorkInt(int ID){ //get a certain member
-        return CourseWorkInfoInt.get(ID); 
+        return CourseWorkInfoInts.get(ID); 
     }
 }

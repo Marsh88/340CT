@@ -10,26 +10,23 @@
 //
 
 
-
+import java.util.ArrayList;
 
 public class CourseWorkInfoRepo {
-	public void addCourseWork() {
-	
-	}
-	
-	public list viewAllCourseWork() {
-	
-	}
-	
-	public CourseWorkInfo ViewACourseWork(int ref) {
-	
-	}
-	
-	public void updateCourseWork() {
-	
-	}
-	
-	public void deleteCourseWork() {
-	
-	}
+
+public interface MemberRepo {
+
+    
+     
+     public ArrayList<CourseWorkInfoInt> getAllCourseWorkInt();
+        
+
+     
+     public ArrayList<CourseWorkInfo> getAllCourseWork();
+
+        public void addCourseWork (CourseWorkInfo CW);
+        public void addCourseWorkInt (CourseWorkInfoInt CW);
+        public CourseWorkInfo getCourseWork(int ID);
+        public CourseWorkInfoInt getCourseWorkInt(int ID);
+}
 }
