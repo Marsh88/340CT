@@ -16,7 +16,10 @@ public class CourseWorkInfoRepoImpl extends CourseWorkInfoRepo {
       private ArrayList<CourseWorkInfo> CourseWorkInfos;
       private ArrayList<CourseWorkInfoInt> CourseWorkInfoInts;
     
-     
+    public void Repository(){
+        CourseWorkInfos = new ArrayList<CourseWorkInfo>();
+        CourseWorkInfoInts = new ArrayList<CourseWorkInfoInt>();
+    }        
      public ArrayList<CourseWorkInfoInt> getAllCourseWorkInt(){
         return CourseWorkInfoInts; 
         
@@ -32,10 +35,26 @@ public class CourseWorkInfoRepoImpl extends CourseWorkInfoRepo {
         public void addCourseWorkInt (CourseWorkInfoInt CW){ 
         CourseWorkInfoInts.add(CW); 
     }
-        public CourseWorkInfo getCourseWork(int ID){ //get a certain member
+        public CourseWorkInfo getCourseWork(int ID){
         return CourseWorkInfos.get(ID); 
     }
-        public CourseWorkInfoInt getCourseWorkInt(int ID){ //get a certain member
+        public CourseWorkInfoInt getCourseWorkInt(int ID){ 
         return CourseWorkInfoInts.get(ID); 
+    }
+        public void updateCourseWorkInfo(CourseWorkInfo CW){ //not yet implimented But would allow the changing of bad Information.
+
+    }
+          public void updateCourseWorkInfoInt(CourseWorkInfoInt CW){ 
+
+    }
+    
+    public void deleteCourseWorkInt(CourseWorkInfoInt CW){ //deletes a member of the arraylist
+            CourseWorkInfoInts.remove(CW.getID());
+            System.out.println("CourseWork ID: "+ CW.getID()+ "deleted");
+    }
+        
+    public void deleteCourseWork(CourseWorkInfo CW){ //deletes a member of the arraylist
+            CourseWorkInfoInts.remove(CW.getID());
+            System.out.println("CourseWork ID: "+ CW.getID()+ "deleted");
     }
 }
