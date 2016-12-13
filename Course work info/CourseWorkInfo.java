@@ -18,6 +18,7 @@ public class CourseWorkInfo {
 	public String ModuleTutor = "";
 	public String CourseWorkTitle = "";
 	public String AssessmentType = "";
+        public int ID = 0;
 	
         
         public String getModuleCode() {
@@ -59,4 +60,10 @@ public class CourseWorkInfo {
 	public void setAssessmentType(String aAssessmentType) {
 	AssessmentType = aAssessmentType;
 	}
+        public void setID(int aID){
+            ID = aID;
+        }
+        public int getID(){
+            return ID;
+        }
 }

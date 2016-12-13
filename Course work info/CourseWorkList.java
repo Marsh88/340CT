@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class CourseWorkList {
 	ArrayList<CourseWorkInfo> CourseWork = new ArrayList<CourseWorkInfo>();
-        
+        ArrayList<CourseWorkInfoInt> CourseWorkInt = new ArrayList<CourseWorkInfoInt>();
         private int refCount = -1;
         CourseWorkInfoRepoImpl rep = new CourseWorkInfoRepoImpl();
 
@@ -32,12 +32,29 @@ public class CourseWorkList {
         intinfo.setDueDate(dueDate);
         intinfo.setPerofMod(PerofMod);
         intinfo.setID(refCount);
+        rep.addCourseWork(info);
+        rep.addCourseWorkInt(intinfo);
 
 	}
 	
-	public void viewCourseWorks(int Ref) {
-	
-	}
+	public void viewCourseWorks(int ID) {
+            if (findCourseWorkInfo(ID)!= -1){
+                CourseWorkInfo nome1 = rep.getCourseWork(ID);
+                CourseWorkInfoInt nome2 = rep.getCourseWorkInt(ID);
+                System.out.println("ModuleCode:"+nome1.getModuleCode());
+                System.out.println("Moduel Title:"+nome1.getModuleTitle());
+                System.out.println("Moduel Tutor:"+nome1.getModuleTutor());
+                System.out.println("Course Work Title:"+nome1.getCourseWorkTitle());
+                System.out.println("Assement Type:"+nome1.getAssessmentType());
+                System.out.println("Course Work Number:"+nome2.getCourseWorkNo());
+                System.out.println("Issue Date:"+nome2.getIssueDate());
+                System.out.println("Due Date:"+nome2.getDueDate());
+                System.out.println("Percentage of marks:"+nome2.getPerofMod());
+                System.out.println("ID:"+nome2.getID());
+            
+            }
+          
+    }
 	
 	public void findCourseWork(int Ref) {
 	
@@ -50,9 +67,9 @@ public class CourseWorkList {
             
         }
         public int findCourseWorkInfo (int ref) {
-        for(CourseWorkInfo nome:rep.getAllCourseWork()){
+        for(CourseWorkInfoInt nome:rep.getAllCourseWorkInt()){
             if (nome.getID()==ref){
-            return nome.getIsMember();
+            return nome.getID();
         }
         }
         return -1;

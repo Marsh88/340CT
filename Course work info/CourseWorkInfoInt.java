@@ -53,7 +53,7 @@ public class CourseWorkInfoInt {
         public void setID(int aID){
             ID = aID;
         }
-        public int getID(int ID){
+        public int getID(){
             return ID;
         }
         

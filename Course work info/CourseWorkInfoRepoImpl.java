@@ -13,10 +13,29 @@
 import java.util.ArrayList;
 
 public class CourseWorkInfoRepoImpl extends CourseWorkInfoRepo {
-      private ArrayList<CourseWorkInfo> CourseWorkInfo;
+      private ArrayList<CourseWorkInfo> CourseWorkInfos;
+      private ArrayList<CourseWorkInfoInt> CourseWorkInfoInts;
+    
+     
+     public ArrayList<CourseWorkInfoInt> getAllCourseWorkInt(){
+        return CourseWorkInfoInts; 
+        
+    } 
      
      public ArrayList<CourseWorkInfo> getAllCourseWork(){
-        return CourseWorkInfo; 
+        return CourseWorkInfos; 
+        
     } 
-
+         public void addCourseWork (CourseWorkInfo CW){ 
+        CourseWorkInfos.add(CW); 
+    } 
+        public void addCourseWorkInt (CourseWorkInfoInt CW){ 
+        CourseWorkInfoInts.add(CW); 
+    }
+        public CourseWorkInfo getCourseWork(int ID){ //get a certain member
+        return CourseWorkInfo.get(ID); 
+    }
+        public CourseWorkInfoInt getCourseWorkInt(int ID){ //get a certain member
+        return CourseWorkInfoInt.get(ID); 
+    }
 }
